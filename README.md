@@ -23,7 +23,7 @@ dotnet add package Shutter
 using Shutter;
 
 // Capture entire screen
-ScreenshotService screenshot = new();
+ShutterService screenshot = new();
 byte[] imageData = screenshot.TakeScreenshot();
 File.WriteAllBytes("screenshot.png", imageData);
 ```
@@ -35,7 +35,7 @@ using Shutter;
 using Shutter.Models;
 using Shutter.Enums;
 
-ScreenshotService screenshot = new();
+ShutterService screenshot = new();
 
 // Capture a specific window
 ScreenshotOptions options = new()
@@ -119,7 +119,7 @@ Available fallback behaviors:
 ## Dependency Injection
 
 ```csharp
-services.AddSingleton<IScreenshotService, ScreenshotService>();
+services.AddSingleton<IShutterService, ShutterService>();
 ```
 
 ## Requirements
